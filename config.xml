@@ -68,4 +68,5 @@
   
   <gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" />
   <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
+  <gap:plugin name="com.ionic.keyboard" version="1.0.3" />
 </widget>
