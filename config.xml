@@ -14,7 +14,9 @@
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="android-minSdkVersion" value="16"/>
   <preference name="BackupWebStorage" value="none"/>
-
+  
+  <gap:platform name="ios" />
+  <gap:platform name="android" />
   
     <icon src="resources/ios/icon/icon.png"  gap:platform="ios" width="57" height="57"/>
     <icon src="resources/ios/icon/icon@2x.png"  gap:platform="ios" width="114" height="114"/>
