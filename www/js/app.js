@@ -34,21 +34,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
   $stateProvider
   .state('landing', {
     url: '/',
-    templateUrl: 'templates/landing.html',
+    templateUrl: 'www/templates/landing.html',
   })
   .state('login', {
     url: '/login',
-    templateUrl: 'templates/login.html',
+    templateUrl: 'www/templates/login.html',
     controller:'LoginCtrl'
   })
   .state('register', {
     url: '/register',
-    templateUrl: 'templates/register.html',
+    templateUrl: 'www/templates/register.html',
     controller:'RegisterCtrl'
   })
   .state('lobby', {
     url: '/lobby',
-    templateUrl: 'templates/lobby.html',
+    templateUrl: 'www/templates/lobby.html',
     controller:'LobbyCtrl'
   })
   .state('test', {
@@ -58,7 +58,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
   })
   .state('test.detail', {
     url: '/question:testID',
-    templateUrl: 'templates/question.html',
+    templateUrl: 'www/templates/question.html',
     controller: 'TestCtrl',
     resolve: {
       testInfo: function($stateParams, TKQuestionsService) {
@@ -69,12 +69,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
   .state('results', {
     cache:false,
     url: '/results',
-    templateUrl: 'templates/results.html',
+    templateUrl: 'www/templates/results.html',
     controller:'ResultsCtrl'
   })
   .state('history', {
     url: '/history',
-    templateUrl: 'templates/history.html',
+    templateUrl: 'www/templates/history.html',
     controller:'HistoryCtrl'
   });
   
