@@ -63,6 +63,7 @@
     <gap:splash src="resources/android/splash/drawable-port-xxxhdpi-screen.png" gap:platform="android" gap:qualifier="port-xxxhdpi"/>
     
   <icon src="resources/android/icon/drawable-xhdpi-icon.png"/>
+  <gap:splash src="resources/android/splash/drawable-land-xhdpi-screen.png" />
   
   <gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" />
   <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
