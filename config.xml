@@ -17,8 +17,7 @@
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="android-minSdkVersion" value="16"/>
   <preference name="BackupWebStorage" value="none"/>
-  <preference name="StatusBarOverlaysWebView" value="true" /> 
-  <preference name="StatusBarStyle" value="lightcontent" />
+
   
   <gap:platform name="ios" />
   <gap:platform name="android" />

@@ -13,9 +13,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
     if(window.StatusBar) {
-      StatusBar.styleDefault();
+      StatusBar.overlaysWebView(true)
+      StatusBar.StatusBar.styleLightContent();
     }
-    console.log("user ID " +$window.localStorage["userID"]);
+    
     if($window.localStorage["userID"]!==undefined)
     {
         $ionicHistory.nextViewOptions({
