@@ -1,9 +1,9 @@
 angular.module('starter.controllers', [])
 
-.controller('LoginCtrl',['$scope', '$state', 'UserService', '$ionicHistory', '$window', 'SSFAlertsService',
-function($scope, $state, UserService, $ionicHistory, $window, SSFAlertsService) {
+.controller('LoginCtrl',['$scope', '$rootScope', '$state', 'UserService', '$ionicHistory', '$window', 'SSFAlertsService','IonicPushService',
+function($scope, $rootScope, $state, UserService, $ionicHistory, $window, SSFAlertsService, IonicPushService) {
     $scope.user = {};
-    console.log($window);
+   
     var rememberMeValue;
     if($window.localStorage["rememberMe"] === undefined || $window.localStorage["rememberMe"] == "true") {
         rememberMeValue = true;
@@ -47,6 +47,7 @@ function($scope, $state, UserService, $ionicHistory, $window, SSFAlertsService) 
                     $window.localStorage["rememberMe"] = $scope.checkbox.rememberMe;
                     $scope.user.password = "";
                     form.$setPristine();
+                    IonicPushService.registerForPush();
                 } else {
                     // invalid response
                     if(response.status === 401)
@@ -71,9 +72,11 @@ function($scope, $state, UserService, $ionicHistory, $window, SSFAlertsService) 
             });
         }
     };
+    
+
 }])
-.controller('RegisterCtrl',['$scope', '$state', 'UserService', '$ionicHistory','$window', 'SSFAlertsService',
-function($scope, $state, UserService, $ionicHistory, $window, SSFAlertsService) {
+.controller('RegisterCtrl',['$scope', '$state', 'UserService', '$ionicHistory','$window', 'SSFAlertsService', 'IonicPushService',
+function($scope, $state, UserService, $ionicHistory, $window, SSFAlertsService, IonicPushService) {
     $scope.user = {};
     $scope.repeatPassword = {};
     $scope.signupForm = function(form)
@@ -135,6 +138,7 @@ function($scope, $state, UserService, $ionicHistory, $window, SSFAlertsService) 
                 $state.go('landing');
             }
             resetFields();
+            IonicPushService.registerForPush();
         }, function(response) {
             // something went wrong
             $state.go('landing');

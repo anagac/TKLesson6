@@ -3,7 +3,8 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TKServicesModule', 'chart.js','SSFAlerts'])
+angular.module('starter', ['ionic','ionic.service.core', 'ionic.service.push','starter.controllers', 
+'RESTConnection', 'TKServicesModule', 'chart.js','SSFAlerts', 'IonicPushModule'])
 
 .run(["$ionicPlatform", "$window", "$state", "$ionicHistory", function($ionicPlatform, $window, $state, $ionicHistory) {
   $ionicPlatform.ready(function() {
@@ -27,6 +28,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
     }
   });
 }])
+.config(['$ionicAppProvider', function($ionicAppProvider) {
+  $ionicAppProvider.identify({
+    app_id: '354d5be3',
+    api_key: '161654694e586fafabeb0938299c5d76eb611e5fd1b36755',
+    dev_push: true
+  });
+}])
 .config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
   
@@ -35,21 +43,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
   $stateProvider
   .state('landing', {
     url: '/',
-    templateUrl: 'www/templates/landing.html',
+    templateUrl: 'templates/landing.html',
   })
   .state('login', {
     url: '/login',
-    templateUrl: 'www/templates/login.html',
+    templateUrl: 'templates/login.html',
     controller:'LoginCtrl'
   })
   .state('register', {
     url: '/register',
-    templateUrl: 'www/templates/register.html',
+    templateUrl: 'templates/register.html',
     controller:'RegisterCtrl'
   })
   .state('lobby', {
     url: '/lobby',
-    templateUrl: 'www/templates/lobby.html',
+    templateUrl: 'templates/lobby.html',
     controller:'LobbyCtrl'
   })
   .state('test', {
@@ -59,7 +67,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
   })
   .state('test.detail', {
     url: '/question:testID',
-    templateUrl: 'www/templates/question.html',
+    templateUrl: 'templates/question.html',
     controller: 'TestCtrl',
     resolve: {
       testInfo: function($stateParams, TKQuestionsService) {
@@ -70,12 +78,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
   .state('results', {
     cache:false,
     url: '/results',
-    templateUrl: 'www/templates/results.html',
+    templateUrl: 'templates/results.html',
     controller:'ResultsCtrl'
   })
   .state('history', {
     url: '/history',
-    templateUrl: 'www/templates/history.html',
+    templateUrl: 'templates/history.html',
     controller:'HistoryCtrl'
   });
   
