@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic','ionic.service.core', 'ionic.service.push','starter.controllers', 
-'RESTConnection', 'TKServicesModule', 'chart.js','SSFAlerts', 'IonicPushModule'])
+'RESTConnection', 'TKServicesModule', 'chart.js','SSFAlerts', 'IonicPushModule', 'ngIOS9UIWebViewPatch'])
 
 .run(["$ionicPlatform", "$window", "$state", "$ionicHistory", function($ionicPlatform, $window, $state, $ionicHistory) {
   $ionicPlatform.ready(function() {
